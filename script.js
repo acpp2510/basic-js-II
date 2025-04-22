@@ -46,13 +46,27 @@ if (pet == "perro") {
 
 //Escribe tu código aquí
 
+const pet2 = "perro";
 
+switch (pet2) {
+    case "perro":
+        console.log("Tengo un perro")
+        break;
+    case "gato":
+        console.log("Tengo un gato")
+        break;
+    case "pajaro":
+        console.log("Tengo un pajaro")
+        break;
+    default:
+        console.log("No tengo una mascota convencional")
+};
 
 //Ejercicio 6: Usando un operador ternario, escribe un programa que lea la constante weather e imprima en consola si es soleado "Me vestiré con un vestido" y si no es así que imprima "Me vestiré con pantalón"
 
-const weather = "soleado"
+const weather = "frío"
 
-const result = //Escribe tu código aquí;
+const result =  weather == "soleado" ? "Me vestiré con un vestido" : "Me vestiré con pantalón"//Escribe tu código aquí;
 
 console.log(result)
 
@@ -60,10 +74,21 @@ console.log(result)
 
 //Ejercicio 8: Escribe un programa que al darle la constante 'value' imprima en consola "Es un número" cuando el valor sea de tipo number, "Es un string" cuando el valor sea de tipo string o si no es ni uno ni otro que imprima "No es ni número ni string". Puedes hacerlo con cualquier tipo de condicional.
 
-const value = '1'
+const value = true//'1'
 
-//Escribe tu código aquí
+if (typeof value === "number") {
+    console.log("Es un número")
+} else if (typeof value === "string") {
+    console.log("Es un string")
+} else {
+    console.log("No es ni número ni string")
+};
 
+
+//OPCION TERNARIO
+const value2 = true
+
+typeof value2 === "number" ? console.log("Es un número"): typeof value2 === "string" ? console.log("Es un string") : console.log("No es ni número ni string")
 
 //BUCLES
 
@@ -71,6 +96,9 @@ const value = '1'
 
 //Escribe tu código aquí
 
+for (let i=0; i <= 10; i++){
+    console.log(i)
+}
 
 //Ejercicio 10: Con un bucle for in imprime en pantalla todos los nombres, apellidos y su aporte a la sociedad de las programadoras de la historia contenidas en el array llamado 'programmers', Deberás imprimir el índice y la información de cada una de ellas de la siguiente manera: '0: Ada Lovelace, su aporte fue la máquina analítica'. 
 
@@ -99,6 +127,9 @@ const programmers = [
 
 //Escribe tu código aquí
 
+for (index in programmers){
+    console.log(`${index}: ${programmers[index].name} ${programmers[index].lastname}, su aporte fue ${programmers[index].knowledge}`)
+}
 
 //Ejercicio 11: Con un bucle for of imprime en consola "Hola, mi nombre es ... " y reemplaza los tres puntos con cada nombre del array dado.
 
@@ -107,24 +138,52 @@ const names = ['Carla', 'Alex', 'Judith', 'Maria', 'Noelia']
 //Escribe tu código aquí
 
 
+for (let name of names){
+    console.log(`Hola, mi nombre es ${name}`)
+}   
+
+
 //Ejercicio 12: Con un bucle while imprime en consola una lista del 1 al 5.
 
 //Escribe tu código aquí
+let i = 0
 
+while ( i <= 5 ) {
+    console.log(i);
+    i++;
+}
 
 //Ejercicio 13: Realiza el mismo ejercicio anterior pero con un bucle do while.
 
 //Escribe tu código aquí
 
+let a = 0
+
+do {
+    console.log(a);
+    a++;
+} 
+while (a <= 5)
 
 //Ejercicio 14: Saludo Personalizado
 //Crea una función llamada saludar que tome un parámetro llamado nombre y devuelva un saludo personalizado. Luego, llama a la función con diferentes nombres y muestra el resultado en la consola.
 
 //Escribe tu código aquí
 
+function saludar (nombre) {
+    console.log(`Hola caracola, soy desarrolladora y mi nombre es: ${nombre}`)
+}
+saludar("Lili")
+saludar("jorge")
 
 //Ejercicio 15: Calcular el Área de un Rectángulo
 //Crea una función llamada calcularAreaRectangulo que tome dos parámetros (ancho y alto) y devuelva el área del rectángulo. Luego, llama a la función con diferentes valores de ancho y alto y muestra el resultado en la consola.
 
 //Escribe tu código aquí
 
+function calcularAreaRectangulo (ancho, alto) {
+    let result= ancho * alto
+    console.log(`El área del rectánglo es: ${result}`)
+}
+
+calcularAreaRectangulo(5, 5)
